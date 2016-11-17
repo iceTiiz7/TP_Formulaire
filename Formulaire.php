@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!doctype htlm>
 <html lang="fr">
 <?php
