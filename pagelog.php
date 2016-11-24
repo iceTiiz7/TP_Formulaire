@@ -29,7 +29,7 @@
 
 
 <?php
-	if($_POST['pseudo']==$_SESSION['pseudo'] && $_POST['mot_de_passe']==$_SESSION['mot_de_passe']){
+	if(isset($_POST['pseudo'],$_POST['mot_de_passe']) && $_POST['pseudo']==$_SESSION['pseudo'] && $_POST['mot_de_passe']==$_SESSION['mot_de_passe']){
 			header ('Location: formulaire.php');
 	}else{
 		echo "Vérifier vos champs.";

@@ -60,7 +60,11 @@
 					<br/>
                     <br/>
                     <input type="submit" value="Publier"/>
+
                 </p>
+            </form>
+            <form action="logout.php" method ="POST">
+                    	<input type="submit" value="logout" />
             </form>
         </footer>
     </body>
