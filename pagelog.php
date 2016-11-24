@@ -1,4 +1,9 @@
-<?php session_start(); ?>
+<?php session_start(); 
+	
+	$_SESSION['pseudo']="azerty";
+	$_SESSION['mot_de_passe']="123";
+
+?>
 
 
 <!DOCTYPE html>
@@ -9,7 +14,7 @@
 	<link rel="stylesheet" type="text/css" href="Style.css">
 	<script type="script.js"></script>
 </head>
-<body>
+<body id="body">
 	<form action="#" method="POST">
     Pseudo: <input type="text" name="pseudo" value="" />
      
@@ -24,21 +29,9 @@
 
 
 <?php
-
-	if(isset($_POST['connexion'])){
-		/*if(empty($_POST['pseudo'])) {
-        echo "Le champ Pseudo est vide.";
-    } else {
-		if(empty($_POST['mot_de_passe'])) {
-		echo "Le champ Mot de passe est vide.";
-	} else {*/
-		if (isset($_POST['mot_de_passe']) AND $_POST['mot_de_passe'] == "123" AND isset($_POST['pseudo']) AND $_POST['pseudo'] == "azerty"){
-	    	echo "Test";
-		}else{
-			echo "Vérifier vos champs";
-			}
-		}
-	//}
-//}
-
+	if($_POST['pseudo']==$_SESSION['pseudo'] && $_POST['mot_de_passe']==$_SESSION['mot_de_passe']){
+			header ('Location: formulaire.php');
+	}else{
+		echo "Vérifier vos champs.";
+	}
 ?>

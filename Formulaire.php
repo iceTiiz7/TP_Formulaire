@@ -1,4 +1,3 @@
-<?php session_start(); ?>
 <!doctype htlm>
 <html lang="fr">
 <?php
@@ -20,7 +19,7 @@
 	<h1 id="titre">Blog</h1>
 </head>
 
-	<body id=body>
+	<body id="body">
 		<form action="#" method="POST"> 
 	<p>
 		<br/>
@@ -54,7 +53,7 @@
 	</p> 
 	</form>
 	</body>
-	<footer id=piedpage>
+	<footer id="piedpage">
 		<div id=bas></div>
 		<h2 id="petittittre">Formulaire</h2>
 		 <label for="Titre">Titre :   </label></label><textarea name="Titre"></textarea>
