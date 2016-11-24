@@ -1,4 +1,4 @@
-<!doctype htlm>
+<!DOCTYPE html>
 <html lang="fr">
 <?php
 
@@ -10,82 +10,58 @@
 	$minute = date('i');
 ?>
 
+    <head>
+        <meta charset="utf-8">
+        <title>Blog</title>
+		<link rel="stylesheet" type="text/css" href="Style.css">
+		<script type="script.js"></script>
+		<h1 id="titre">Blog</h1>
+    </head>
 
-<head>
-	<meta charset="utf-8">
-	<title>BLOG</title>
-	<link rel="stylesheet" type="text/css" href="Style.css">
-	<script type="script.js"></script>
-	<h1 id="titre">Blog</h1>
-</head>
+    <body id="body">
+        <header>
+                <?php
+                    
+                    if (isset($_POST['Pseudo']) and isset($_POST['Titre']) and isset($_POST['Message']) and !empty($_POST['Pseudo']) and !empty($_POST['Titre']) and !empty($_POST['Message'])){
+                        
+                        
+                        $f = fopen("traitement.txt", "a+"); 
+                        
+                        fputs($f,'<p>Pseudo: '.htmlspecialchars($_POST["Pseudo"]).'<br>Titre: '.htmlspecialchars($_POST["Titre"]).
+                              '<br>Message: '.htmlspecialchars($_POST["Message"]).'</p>'); 
+                        fclose($f);
+                    }
+                    
+                    
+                   $f = fopen("traitement.txt", "r"); 
+                    $ligne = fgets($f);
+                
+                    echo $ligne; 
 
-	<body id="body">
-		<form action="#" method="POST"> 
-	<p>
-		<br/>
-			<h2 id="petittittre"><label for="Titre">Titre :
-							<?php
-							 	if (isset($_POST['Titre'])){
-							 		echo ''.htmlspecialchars($_POST['Titre']);
-							 	}
-							 ?></h2>
-
-			<label for="Pseudo">Pseudo : 
-							 <?php
-							 	if (isset($_POST['Pseudo'])){
-							 		echo ''.htmlspecialchars($_POST['Pseudo']);
-							 	}
-							 ?>
-			
-			<br/>
-			<label for="Date">
+                ?>
+        </header>
+        
+        <footer>
+            <form action="" method="POST">
+                <p id="piedpage">
+                    <label for="Pseudo">Pseudo: </label><input type="text" name="Pseudo" />
+                    <br/>
+                    <br/>
+                    <label for="Titre">Titre: </label><input type="text" name="Titre" />
+                    <br/>
+                    <br/>
+                    <label for="TextArea">Message: </label><br/><textarea rows="4" cols="50" name="Message"></textarea>
+                    <br/>
+                    <br/>
+                    <label for="Date">
 			 				 <?php
 							 	echo'Date de publication: ' .$jour .'/' .$mois .'/' .$annee .' ';
 							 ?>
-			
-			<br/>
-			<label for="Message">Message :
-			 				<?php
-							 	if (isset($_POST['Message'])){
-							 		echo ''.htmlspecialchars($_POST['Message']);
-							 	}
-						 	?>
-	</p> 
-	</form>
-	</body>
-	<footer id="piedpage">
-		<div id=bas></div>
-		<h2 id="petittittre">Formulaire</h2>
-		 <label for="Titre">Titre :   </label></label><textarea name="Titre"></textarea>
-		<br/>
-		 <label for="Pseudo">Pseudo :  </label></label><textarea name="Pseudo"></textarea>
-		<br/>
-		 <label for="Message">Message : </label><textarea rows="8" cols"45" name="Message"></textarea>
-		<br/>
-		 <label for="Date">
-							<?php
-
-							echo'Date de publication: ' .$jour .'/' .$mois .'/' .$annee .' ' .$heure .'h' .$minute;
-
-							?>
-		<br/>
-		<br/>
-		 <input type="submit" value="Publier" id=bouton>
-	</footer>
-
-<?php
-	
-	$monfichier = fopen('traitement.txt', 'a+');
-
-	$ligne = fgets($monfichier);
-	fputs($monfichier, '<p>'.htmlspecialchars($_POST['Titre']) .'<br/>'.htmlspecialchars($_POST['Pseudo']) .'<br/>'.htmlspecialchars($_POST['Message']) .'</p>');
-
-	fclose($monfichier);
-
-	$monfichier = fopen('traitement.txt', 'r');
-	$contenue = fgets($monfichier);
-
-	echo $contenue;
-
-
-?>
+					<br/>
+                    <br/>
+                    <input type="submit" value="Publier"/>
+                </p>
+            </form>
+        </footer>
+    </body>
+</html>
