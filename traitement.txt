@@ -1,5 +1,0 @@
-<p>Pseudo: testt<br>Titre: test<br>Message: test</p><p>Pseudo: Jordan<br>Titre: Nouveau blog<br>Message: Bonjour et bienvenue sur un blog</p><p>Pseudo: Jordan2<br>Titre: Aide<br>Message: Bonjour, Je recherche de l'aide en PHP
-</p><p>Pseudo: Jordan2<br>Titre: Aide<br>Message: Bonjour, Je recherche de l'aide en PHP
-</p><p>Pseudo: Jordan2<br>Titre: Aide<br>Message: Bonjour, Je recherche de l'aide en PHP
-</p><p>Pseudo: Jordan2<br>Titre: Aide<br>Message: Bonjour, Je recherche de l'aide en PHP
-</p>
